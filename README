@@ -1,0 +1,10 @@
+==DESCRIPTION
+The directory scraper allows you to pull phone numbers and addresses of multiple people at a time from the Northwestern University online directory.
+
+The script is written in PHP with the intention of being web-based.
+
+==LIMITATIONS
+Because full access to the directory is only available on campus or on the NU VPN, the directory scraper will only work when it is hosted on a computer on campus or on the VPN.
+
+==FUTURE
+Soon I will transform this into a php class for greater flexibility.
