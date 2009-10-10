@@ -1,12 +1,13 @@
 <?php
 
+define('BASEURL', 'http://tlab-login.cs.northwestern.edu/~cel294/NU-Directory-Scraper/fetch.php?q=');
+
 class nuDirectoryEntry {
 
   function __construct($name) {
 
     $name_encoded = urlencode($name);
-    $html = file_get_contents("http://tlab-login.cs.northwestern.edu/~cel294/NU-Directory-Scraper/fetch.php?q=$name_encoded");
-//  $html = file_get_contents("http://directory.northwestern.edu/index.cgi?a=1&name=$name_encoded");
+    $html = file_get_contents(BASEURL . $name_encoded);
     $dom = new domDocument;
     $dom->loadHTML($html);
     $div = $dom->getElementById('content-body');
