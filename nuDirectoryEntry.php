@@ -6,7 +6,6 @@ class nuDirectoryEntry {
 
     $name_encoded = urlencode($name);
     $html = file_get_contents("http://tlab-login.cs.northwestern.edu/~cel294/NU-Directory-Scraper/fetch.php?q=$name_encoded");
-//  $html = file_get_contents("http://directory.northwestern.edu/index.cgi?a=1&name=$name_encoded");
     $dom = new domDocument;
     $dom->loadHTML($html);
     $div = $dom->getElementById('content-body');
@@ -15,7 +14,8 @@ class nuDirectoryEntry {
     $cols = $rows->item(1)->getElementsByTagName('td');
     $this->address = nl2br($cols->item(2)->nodeValue);
     $this->phone = $cols->item(1)->nodeValue . "<br />";
-    $this->name = $name;
+    $this->name = $cols->item(0)->nodeValue;
+    //$this->name = $name;
   }
 }
 
