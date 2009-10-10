@@ -15,7 +15,7 @@ class nuDirectoryEntry {
     $rows = $table->getElementsByTagName('tr');
     $cols = $rows->item(1)->getElementsByTagName('td');
     $this->address = nl2br($cols->item(2)->nodeValue);
-    $this->phone = $cols->item(1)->nodeValue . "<br />";
+    $this->phone = $cols->item(1)->nodeValue;
     $this->name = $name;
   }
 }
