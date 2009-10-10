@@ -19,7 +19,7 @@ if(isset($_POST['namelist']))
   {
     $person = new nuDirectoryEntry($name);
     echo "<p>" . $person->name . "<br />";
-    echo $person->phone . "<br />";
+    echo $person->phone;
     echo $person->address . "</p>";
   }
 }
