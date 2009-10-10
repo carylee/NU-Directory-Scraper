@@ -7,20 +7,21 @@
 </head>
 <body>
 
-<?php
-require('nuDirectoryEntry.php');
-//$names = array('Cary Lee', 'Kaitlin Very', 'Nathan Ritter', 'Luis de la Torre', 'Jennifer Jenkins');
 
-if(isset($_POST['namelist'])) {
+<?php
+
+if(isset($_POST['namelist']))
+{
+  include 'nuDirectoryEntry.php';
   $names = explode(",", $_POST['namelist']);
 
-foreach ($names as $name ) {
-  $person = new nuDirectoryEntry($name);
-  echo "<p>" . $person->name "<br />";
-  echo $person->phone. "<br />";
-  echo $person->address . "</p>";
-}
-
+  foreach ($names as $name)
+  {
+    $person = new nuDirectoryEntry($name);
+    echo "<p>" . $person->name . "<br />";
+    echo $person->phone . "<br />";
+    echo $person->address . "</p>";
+  }
 }
 
 ?>
@@ -30,4 +31,3 @@ Names (separate by comma)<input type="text" size="40" name="namelist"><br />
 </form>
 </body>
 </html>
-

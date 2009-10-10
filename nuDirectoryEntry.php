@@ -16,5 +16,7 @@ class nuDirectoryEntry {
     $this->address = nl2br($cols->item(2)->nodeValue);
     $this->phone = $cols->item(1)->nodeValue;
     $this->name = $name;
-
+  }
 }
+
+?>
