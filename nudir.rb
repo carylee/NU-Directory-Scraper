@@ -5,9 +5,6 @@ require 'open-uri'
 require 'nokogiri'
 require 'cgi'
 
-name = "Cary Lee"
-
-
 def lookup( name )
   encodedName = CGI::escape(name)
   url = "http://directory.northwestern.edu/index.cgi?a=1&name=" + encodedName
@@ -39,6 +36,10 @@ def lookup( name )
   return info
 end
 
-info = lookup(name)
-puts info
-
+ARGV.each do|name|
+  info = lookup(name)
+  puts "Name: #{info['name']}"
+  puts "Email: #{info['email']}"
+  puts "Phone: #{info['phone']}"
+  puts "Address: #{info['address']}"
+end
